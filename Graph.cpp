@@ -65,7 +65,7 @@ bool Graph::vertexExists(int vnumber) {
 
 #define VERYBIGINT 1'000'000'000 // î÷åíü áîëüøîå ÷èñëî
 
-void Graph::findMinDistancesFloyd(const int allowableLength) {    // int weights[][]) {
+void Graph::findMinDistancesFloyd(const int allowableLength) {
     int weights[SIZE][SIZE]; // ìàòðèöà ïóòåé
     // èíèöèàëèçàöè ìàòðèöû
     for (int i = 0; i < SIZE; i++) {
