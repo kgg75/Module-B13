@@ -84,6 +84,12 @@ int Graph::getVertexCount() {
     return vertexCount;
 }
 
+
+std::string Graph::getVertexName(int _index) {
+    return verticesNames[_index];
+}
+
+
 void Graph::width(int start) {
     int queue_to_visit[SIZE]; // очередь вершин для обхода
     int queueCount = 0;
@@ -189,7 +195,6 @@ void Graph::findMinDistanceDecstr(int fromVert) {
 
 
 void Graph::findMinDistancesFloyd(int (&weights)[][SIZE]) {
-
 //void Graph::findMinDistancesFloyd(int (*weights)[SIZE][SIZE]) {
     //int weights[SIZE][SIZE]; // матрица путей
     // инициализаци матрицы

@@ -43,9 +43,9 @@ int main() {
         for (int j = i + 1; j < g.getVertexCount(); j++)
             if (weights[i][j] != 0)
                 if (weights[i][j] <= 3)
-                    std::cout << "V" << i << " -> V" << j << " = " << weights[i][j] << '\n';
+                    std::cout << "link length " << g.getVertexName(i) << " -> " << g.getVertexName(j) << " = " << weights[i][j] << '\n';
                 else
-                    std::cout << "V" << i << " -> V" << j << " - not exist" << '\n';
+                    std::cout << g.getVertexName(i) << " and " <<  g.getVertexName(j) << " - don't know each other" << '\n';
 
     
 

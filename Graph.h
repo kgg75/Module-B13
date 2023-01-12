@@ -19,9 +19,9 @@ class Graph {
         void findMinDistancesFloyd(int (&weights)[][SIZE]);
         //void findMinDistancesFloyd(int (*weights)[SIZE][SIZE]);
         int getVertexCount();
+        std::string getVertexName(int _index);
     private:
         int matrix[SIZE][SIZE]; // матрица смежности
-
         int vertexes[SIZE]; // хранилище вершин
         std::string verticesNames[SIZE]; // хранилище имён вершин
         int vertexCount; // количество добавленных вершин
