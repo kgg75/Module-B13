@@ -11,13 +11,23 @@ class Graph {
         void addEdge(int v1, int v2, int weight = 1);
         void removeVertex(int vnumber);
         void removeEdge(int v1, int v2);
-        void findMinDistancesFloyd(const int allowableLength);
-
+        void depth(int start);
+        void width(int start);
+        int findPathCount(int from, int to);
+        int findMinWayDFS(int from, int to);
+        void findMinDistanceDecstr(int fromVert);
+        void findMinDistancesFloyd(int (&weights)[][SIZE]);
+        //void findMinDistancesFloyd(int (*weights)[SIZE][SIZE]);
+        int getVertexCount();
     private:
-        int matrix[SIZE][SIZE]; // Г¬Г ГІГ°ГЁГ¶Г  Г±Г¬ГҐГ¦Г­Г®Г±ГІГЁ
-        int vertexes[SIZE]; // ГµГ°Г Г­ГЁГ«ГЁГ№ГҐ ГўГҐГ°ГёГЁГ­
-        std::string verticesNames[SIZE]; // ГµГ°Г Г­ГЁГ«ГЁГ№ГҐ ГЁГ¬ВёГ­ ГўГҐГ°ГёГЁГ­
-        int vertexCount; // ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г®ГЎГ ГўГ«ГҐГ­Г­Г»Гµ ГўГҐГ°ГёГЁГ­
+        int matrix[SIZE][SIZE]; // матрица смежности
+
+        int vertexes[SIZE]; // хранилище вершин
+        std::string verticesNames[SIZE]; // хранилище имён вершин
+        int vertexCount; // количество добавленных вершин
+        void depthInner(int current, bool visited[]);
+        void depthInnerMod(int current, int to, int& pathsCount, bool visited[]);
+        void depthInnerMod2(int current, int to, int& currentWay, int& minWay, bool visited[]);
         bool edgeExists(int v1, int v2);
         bool vertexExists(int vnumber);
 };
